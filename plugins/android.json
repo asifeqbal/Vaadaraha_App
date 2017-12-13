@@ -39,6 +39,9 @@
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.vaadaraha.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.vaadaraha.app"
         }
     },
     "dependent_plugins": {
