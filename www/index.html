@@ -43,13 +43,14 @@
 	<style>
 		html, body{width:100%; height:100%;}
 		body{margin:0; padding:0;}
-	/*	#blanker{width:100%; height:100%; left:0; top:0; background:url('loader.gif') no-repeat center center; display:block; z-index:1000; position:absolute;}*/
+		#blanker{width:100%; height:100%; left:0; top:0; background:url('loader.gif') no-repeat center center; display:block; z-index:1000; position:absolute;}
 		#offline-screen{width:100%; height:100%; background:url('connectionlost.png') no-repeat center center; background-size:contain; display:none; z-index:9999; position:fixed; top:0; left:0;}
 	</style>
     
 </head>
 
 <body>
+	<div id="blanker"></div>
 	<div id="offline-screen"></div>
 	<div class="social-button-facebook button_inline" onclick="browse();"></div>
 	
@@ -58,7 +59,22 @@
     <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
     <script type="text/javascript" charset="utf-8" >
 	
+		document.getElementById('offline-screen').style.height = document.body.clientHeight+'px';
         document.addEventListener("deviceready", onDeviceReady, false);
+		
+		function loaded(){
+			document.getElementById('blanker').style.display = 'none';
+		}
+		var receiveMessage = function receiveMessage(e){
+			switch (e.data) {
+				case 'setBlanker':
+					document.getElementById('blanker').style.display = 'block';
+					break;
+				case 'removeBlanker':
+					document.getElementById('blanker').style.display = 'none'; 
+					break;
+			}
+		};
 		
 		function onDeviceReady() {
 		//alert('baal');
