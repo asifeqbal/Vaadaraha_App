@@ -15,7 +15,10 @@
 	<preference name="SplashScreenDelay" value = "4000" />
 	<preference name="ShowSplashScreenSpinner" value="false" />
 	<preference name="orientation" value="portrait" />
-	 <preference name="target-device" value="universal" />
+	<preference name="target-device" value="universal" />
+	<preference name="StatusBarOverlaysWebView" value="false" />
+	<preference name="StatusBarBackgroundColor" value="#2487d8" />
+	<preference name="StatusBarStyle" value="blacktranslucent" />
 	 
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.2.4" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.4.1" />
