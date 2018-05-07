@@ -78,7 +78,28 @@
 		window.addEventListener("message", receiveMessage, false);
 		
 		function onDeviceReady() {
-		//alert('baal');
+		alert('vaadaraha');
+		
+		var push = PushNotification.init({ "android": {"senderID": "154258606648"},
+					"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+					push.on('registration', function(data) {
+						deviceId = data.registrationId;
+						alert('id:' +  deviceId );	
+										
+					}); 
+					
+					push.on('error', function(e) {
+						notificationFlag = false;
+						
+					}); 
+					push.on('notification', function(data) {
+						navigator.notification.alert(
+							data.message,         // message
+							null,                 // callback
+							data.title,           // title
+							'Ok'                  // buttonName
+						);			
+					});
 					// Blanker on change
 					document.addEventListener("online", doWhenOnline, false);
 					document.addEventListener("offline", doWhenOffline, false);
