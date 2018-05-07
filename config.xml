@@ -53,4 +53,5 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
+    <plugin name="phonegap-plugin-push" spec="~2.2.2" />
 </widget>
