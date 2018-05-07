@@ -101,12 +101,7 @@
                             "count": 1
                         }
                     ],
-                    "/manifest": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
-                            "count": 1
-                        }
-                    ]
+                    "/manifest": []
                 }
             }
         }
